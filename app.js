@@ -24,6 +24,7 @@ pool.connect((err) => {
 
 var indexRouter = require('./routes/index')(pool);
 var produkRouter = require('./routes/products')(pool);
+var usersRouter = require('./routes/users')(pool);
 
 var app = express();
 
@@ -37,5 +38,6 @@ app.use(allowCrossDomain);
 
 app.use('/', indexRouter);
 app.use('/produk', produkRouter);
+app.use('/users', usersRouter);
 
 module.exports = app;

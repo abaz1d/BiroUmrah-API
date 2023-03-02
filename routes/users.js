@@ -7,7 +7,7 @@ module.exports = function (db) {
 
   router.get('/', async function (req, res, next) {
     try {
-      db.query('SELECT * FROM produk;', (err, rows) => {
+      db.query('SELECT * FROM users;', (err, rows) => {
         if (err) res.status(500).json(new Response(err.toString(), false))
         res.json(new Response(rows));
       })
